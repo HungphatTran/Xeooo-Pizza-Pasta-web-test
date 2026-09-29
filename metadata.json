@@ -1,0 +1,8 @@
+{
+  "name": "Xeooo Pizza \u0026 Pasta - Đặt Bàn \u0026 Quản Lý Nhà Hàng",
+  "description": "Hệ thống đặt bàn trực tuyến, chọn bàn theo sơ đồ tầng, quản lý khung nhận bàn theo giờ thời gian thực, tích hợp cổng thanh toán VietQR và báo cáo doanh thu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

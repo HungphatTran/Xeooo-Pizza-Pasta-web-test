@@ -1,0 +1,69 @@
+# XÉOOO PIZZA & PASTA - HƯỚNG DẪN CÀI ĐẶT VÀ CHẠY DỰ ÁN TRÊN MÁY TÍNH
+
+Chào bạn! Đây là toàn bộ mã nguồn của hệ thống Quản lý & Đặt bàn Xéooo Pizza & Pasta (Cơ sở Đội Cấn).
+
+---
+
+## 1. YÊU CẦU CẦN CÓ TRÊN MÁY TÍNH (WINDOWS / MAC / LINUX)
+
+1. **Node.js** (Khuyến nghị phiên bản LTS từ 18 trở lên hoặc 20+):
+   - Nếu máy bạn chưa có Node.js, hãy tải và cài đặt tại: https://nodejs.org/ (chọn bản LTS).
+2. Trình duyệt web hiện đại (Google Chrome, Microsoft Edge, Cốc Cốc, Brave...).
+
+---
+
+## 2. CÁC BƯỚC CHẠY DỰ ÁN
+
+### Bước 1: Giải nén file ZIP
+- Nhấp chuột phải vào file `xeooo_pizza_pasta_source.zip` -> Chọn **Extract All...** (hoặc dùng WinRAR / 7-Zip).
+- Mở thư mục đã giải nén.
+
+### Bước 2: Mở Terminal / Command Prompt tại thư mục dự án
+- Cách 1: Trên thanh địa chỉ của File Explorer trong thư mục dự án, gõ `cmd` rồi nhấn **Enter**.
+- Cách 2: Mở VS Code (Visual Studio Code), chọn `File -> Open Folder` và trỏ vào thư mục này, sau đó mở Terminal (`Ctrl + ` `).
+
+### Bước 3: Cài đặt thư viện dependencies
+Chạy lệnh sau trong Terminal / CMD:
+```bash
+npm install
+```
+*(Chờ 1-2 phút để tải xong các thư viện cần thiết)*
+
+### Bước 4: Chạy dự án ở chế độ phát triển (Local Dev)
+Chạy lệnh:
+```bash
+npm run dev
+```
+
+### Bước 5: Truy cập web
+Mở trình duyệt và truy cập vào địa chỉ:
+```
+http://localhost:3000
+```
+(hoặc cổng hiển thị trên màn hình terminal, ví dụ `http://localhost:5173`).
+
+---
+
+## 3. TÀI KHOẢN ĐĂNG NHẬP NỘI BỘ (MÃ PIN NHÂN VIÊN)
+
+- **Quản lý (Manager)**:
+  - Tên: Nguyễn Văn Quản Lý
+  - Mã PIN: `8888` (Đầy đủ quyền Quản lý: Doanh thu, Nhân viên, Sơ đồ bàn, Đặt bàn, KDS)
+- **Thu ngân (Cashier)**:
+  - Tên: Hoàng Thị Thu Ngân
+  - Mã PIN: `2222`
+- **Nhân viên phục vụ (Staff)**:
+  - Tên: Trần Thị Phục Vụ
+  - Mã PIN: `1111`
+
+---
+
+## 4. TỔ CHỨC THƯ MỤC CHÍNH
+
+- `src/App.tsx`: Giao diện chính, điều hướng tab và kiểm soát phân quyền (RBAC).
+- `src/components/CustomerBookingFlow.tsx`: Luồng đặt bàn trực tuyến 5 bước cho khách hàng.
+- `src/components/FloorPlanVisualizer.tsx`: Sơ đồ bàn 3 tầng (T1, T3, T4 - Bàn 4, 5 tầng 4 tối đa 6 khách).
+- `src/components/ManualBookingMatrix.tsx`: Ma trận quản lý đặt bàn theo khung giờ và tầng.
+- `src/components/RevenueDashboard.tsx`: Báo cáo doanh thu chi tiết (chỉ Quản Lý xem được).
+- `src/data/initialData.ts`: Dữ liệu bàn, thực đơn món ăn, đồ uống, và danh sách đặt bàn mẫu.
+- `src/context/RestaurantContext.tsx`: Quản lý trạng thái toàn cục (State management).
